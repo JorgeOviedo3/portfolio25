@@ -10,12 +10,13 @@ const locales = {
 
 // https://astro.build/config
 export default defineConfig({
-  // site: "https://joviedo.com/",
+  site: "https://joviedo.com/",
   trailingSlash: "always",
   integrations: [
     i18n({
       locales,
       defaultLocale,
+      redirectDefaultLocale: true,
     }),
   ],
 });
