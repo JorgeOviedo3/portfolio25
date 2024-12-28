@@ -1,0 +1,15 @@
+---
+import { getLocale } from "astro-i18n-aut";
+import "./Navbar.scss";
+
+const locale = getLocale(Astro.url);
+---
+
+<nav class="container">
+  <a id="name">JORGE OVIEDO</a>
+  <div class="links">
+    <a class="link glitch">GITHUB</a>
+    <a class="link glitch">LINKEDIN</a>
+    <a href={locale === "es" ? "/en/" : "/es/"} class="language-button">ES/<strong>EN</strong></a>
+  </div>
+</nav>

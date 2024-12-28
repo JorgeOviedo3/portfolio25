@@ -1,22 +1,42 @@
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jorge Oviedo - Portfolio</title>
+    <link rel="preload" href="/fonts/mondwest.otf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/NeueMontreal-Medium.otf" as="font" crossorigin="anonymous" />
+    <script is:inline>
+      function getInitialTheme() {
+        let theme = localStorage.getItem("theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+        theme = theme === "system" ? systemTheme : theme;
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+        if (theme === null) theme = systemTheme;
+
+        return theme;
+      }
+
+      function updateTheme(value) {
+        const theme = value === "system" ? systemTheme : value;
+        document.documentElement.classList.remove("light", "dark");
+        document.documentElement.classList.add(theme);
+        localStorage.setItem("theme", value);
+      }
+
+      updateTheme(getInitialTheme());
+    </script>
+    <style>
+      :global(.dark) {
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

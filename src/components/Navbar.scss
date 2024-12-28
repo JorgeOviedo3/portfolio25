@@ -1,0 +1,33 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  #name {
+    font-family: "NeueMontreal";
+    font-size: 24px;
+  }
+  .links {
+    display: flex;
+    gap: 20px;
+    .link {
+      font-family: "NeueMontreal";
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        text-decoration-line: underline;
+      }
+    }
+    .language-button {
+      margin-left: 20px;
+      font-family: "NeueMontreal";
+      font-size: 18px;
+      letter-spacing: 2px;
+      &:hover {
+        text-decoration-line: underline;
+      }
+      cursor: pointer;
+    }
+  }
+}

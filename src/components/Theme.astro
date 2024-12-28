@@ -1,0 +1,53 @@
+<button id="themeSwitch"></button>
+
+<style>
+  :global(.dark) {
+    color-scheme: dark;
+  }
+  #themeSwitch {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    font-size: 50px;
+    cursor: pointer;
+    font-family: "Mondwest";
+  }
+</style>
+
+<script>
+  const button = document.getElementById("themeSwitch") as HTMLButtonElement;
+  let theme = localStorage.getItem("theme");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+  if (theme !== null) {
+    theme = theme;
+  } else {
+    theme = systemTheme;
+  }
+
+  function updateTheme(value: string) {
+    const theme = value === "system" ? systemTheme : value;
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    button.innerHTML = theme === "light" ? "☽" : "☀";
+    localStorage.setItem("theme", value);
+  }
+
+  updateTheme(theme);
+
+  button.addEventListener("click", (event: Event) => {
+    let theme = localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+    if (theme !== null) {
+      theme = theme;
+    } else {
+      theme = systemTheme;
+    }
+
+    updateTheme(theme === "light" ? "dark" : "light");
+  });
+</script>

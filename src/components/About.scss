@@ -1,0 +1,27 @@
+#about {
+  padding: 200px 0px;
+  border-radius: 10%;
+  border-bottom: 2px solid #343434;
+  .info {
+    display: flex;
+    .left {
+      width: 50%;
+      font-size: 48px;
+      font-family: "NeueMontreal";
+      p {
+        font-family: "NeueMontreal";
+        font-size: 24px;
+      }
+    }
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: end;
+      img {
+        max-width: 356px;
+        max-height: 476px;
+        object-fit: contain;
+      }
+    }
+  }
+}

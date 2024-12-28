@@ -1,0 +1,22 @@
+#footer {
+  height: 80vh;
+  .wrapper {
+    position: relative;
+    .image {
+      position: absolute;
+      object-fit: cover;
+      top: 50%;
+      max-width: 100vw;
+      max-height: 856px;
+    }
+    h1 {
+      font-size: 72px;
+      font-family: "Mondwest";
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      top: 100%;
+      transform: translateY(500%);
+    }
+  }
+}

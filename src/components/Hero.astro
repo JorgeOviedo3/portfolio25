@@ -1,0 +1,33 @@
+---
+import { getLocale } from "astro-i18n-aut";
+import Image from "astro/components/Image.astro";
+import gradient from "../assets/gradient.png";
+import "./Hero.scss";
+
+const locale = getLocale(Astro.url);
+
+const t = {
+  es: {
+    charge: "DESARROLLADOR FRONTEND",
+    based: "BASADO EN MADRID",
+    portfolio: "PORTAFOLIO",
+  },
+  en: {
+    charge: "FRONTEND DEVELOPER",
+    based: "BASED IN MADRID",
+    portfolio: "PORTFOLIO",
+  },
+};
+
+const translation = t[locale] || t.es;
+---
+
+<section class="container" id="hero">
+  <div class="wrapper">
+    <h1>
+      JORGE OVIEDO シ<br />{translation.charge}<br />☼ {translation.based} ☀ <br />
+      {translation.portfolio} 25⚗✨
+    </h1>
+    <Image class="image glitch" src={gradient} alt="gradient" />
+  </div>
+</section>

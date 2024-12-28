@@ -1,0 +1,23 @@
+#hero {
+  height: 65vh;
+  .wrapper {
+    position: relative;
+    .image {
+      position: absolute;
+      object-fit: cover;
+      z-index: 0;
+      top: -100%;
+      max-width: 100vw;
+      max-height: 856px;
+    }
+    h1 {
+      font-size: 72px;
+      font-family: "Mondwest";
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(55%);
+    }
+  }
+}

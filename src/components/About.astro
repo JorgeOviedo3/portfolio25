@@ -1,0 +1,37 @@
+---
+import { getLocale } from "astro-i18n-aut";
+import { Image } from "astro:assets";
+import aboutImg from "../assets/about.png";
+import "./About.scss";
+
+const locale = getLocale(Astro.url);
+
+const t = {
+  es: {
+    title: "Hola Mundo, Soy Jorge",
+    text: `Un desarrollador full-stack basado en Madrid. Tengo pasión por el desarrollo web y me encanta
+    crear sitios web y aplicaciones web que sean rápidos, receptivos y accesibles.`,
+  },
+  en: {
+    title: "Hello World, I'm Jorge",
+    text: `A full-stack developer based in Madrid. I have a passion for web development and love to
+    create websites and web applications that are fast, responsive, and accessible.`,
+  },
+};
+
+const translation = t[locale] || t.es;
+---
+
+<section class="container" id="about">
+  <div class="info">
+    <div class="left">
+      <h3>{translation.title}</h3>
+      <p>
+        {translation.text}
+      </p>
+    </div>
+    <div class="right">
+      <Image src={aboutImg} alt="About" class="about-img" />
+    </div>
+  </div>
+</section>

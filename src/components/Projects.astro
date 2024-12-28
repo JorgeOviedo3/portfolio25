@@ -1,0 +1,39 @@
+---
+import "./Projects.scss";
+import project1 from "../assets/project1.png";
+import { Image } from "astro:assets";
+---
+
+<section id="projects" class="container">
+  <h1 class="title">SOME OF MY WORK</h1>
+  <div class="project">
+    <div class="project__info">
+      <h2 class="project__title">REACTIVE</h2>
+      <p class="project__description">AN AWESOME PLACE WHERE YOUR CODE CAN BE SEEN.</p>
+      <a class="project__link">Visit Website</a>
+    </div>
+    <div class="project__image">
+      <Image src={project1} alt="Reactive" />
+    </div>
+  </div>
+  <div class="project">
+    <div class="project__info">
+      <h2 class="project__title">STOCKY</h2>
+      <p class="project__description">A SMART AUTOMATIC INVENTORY TOOL.</p>
+      <a class="project__link">Visit Website</a>
+    </div>
+    <div class="project__image">
+      <Image src={project1} alt="Reactive" />
+    </div>
+  </div>
+  <div class="project">
+    <div class="project__info">
+      <h2 class="project__title">FYNECO</h2>
+      <p class="project__description">AN AWESOME PLACE WHERE YOUR CODE CAN BE SEEN.</p>
+      <a class="project__link">Visit Website</a>
+    </div>
+    <div class="project__image">
+      <Image src={project1} alt="Reactive" />
+    </div>
+  </div>
+</section>

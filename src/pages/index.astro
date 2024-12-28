@@ -1,11 +1,52 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import "../global.scss";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import Stats from "../components/Stats.astro";
+import Footer from "../components/Footer.astro";
+import About from "../components/About.astro";
+import Theme from "../components/Theme.astro";
 ---
 
+<script>
+  import { PowerGlitch } from "powerglitch";
+
+  PowerGlitch.glitch(".glitch", {
+    playMode: "hover",
+    hideOverflow: false,
+    timing: {
+      duration: 1000,
+      iterations: 1,
+      easing: "ease-in-out",
+    },
+    glitchTimeSpan: {
+      start: 0,
+      end: 0.3,
+    },
+    shake: {
+      velocity: 10,
+      amplitudeX: 0.4,
+      amplitudeY: 0.4,
+    },
+    slice: {
+      count: 10,
+      velocity: 10,
+      minHeight: 0.02,
+      maxHeight: 0.4,
+      hueRotate: true,
+    },
+  });
+</script>
+
 <Layout>
-	<Welcome />
+  <Navbar />
+  <Theme />
+  <Hero />
+  <Projects />
+  <Stats />
+  <About />
+  <Footer />
 </Layout>
