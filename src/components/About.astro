@@ -11,11 +11,13 @@ const t = {
     title: "Hola Mundo, Soy Jorge",
     text: `Un desarrollador full-stack basado en Madrid. Tengo pasión por el desarrollo web y me encanta
     crear sitios web y aplicaciones web que sean rápidos, receptivos y accesibles.`,
+    socials: "Puedes encontrarme en:",
   },
   en: {
     title: "Hello World, I'm Jorge",
     text: `A full-stack developer based in Madrid. I have a passion for web development and love to
     create websites and web applications that are fast, responsive, and accessible.`,
+    socials: "You can find me here:",
   },
 };
 
@@ -29,6 +31,7 @@ const translation = t[locale] || t.es;
       <p>
         {translation.text}
       </p>
+      <p>{translation.socials}</p>
     </div>
     <div class="right">
       <Image src={aboutImg} alt="About" class="about-img" />

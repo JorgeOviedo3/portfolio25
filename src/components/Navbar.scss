@@ -6,6 +6,7 @@ nav {
     position: fixed;
     height: 100px;
     z-index: 999999;
+    mix-blend-mode: difference;
   }
   #name {
     font-family: "NeueMontreal";
@@ -20,7 +21,7 @@ nav {
       font-size: 18px;
       text-decoration: none;
       letter-spacing: 3px;
-
+      color: var(--color-text);
       cursor: pointer;
       &:hover {
         text-decoration-line: underline;
