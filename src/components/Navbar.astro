@@ -11,7 +11,7 @@ const locale = getLocale(Astro.url);
     <div class="links">
       <a target="_blank" href="www.github.com/jorgeoviedo3" class="link glitch">GITHUB</a>
       <a target="_blank" href="www.linkedin.com/in/jorgeoviedo3" class="link glitch">LINKEDIN</a>
-      <a href={locale === "es" ? "/en/" : "/es/"} class="language-button"
+      <a href={locale === "es" ? "/en/" : "/"} class="language-button"
         >{locale === "es" ? <strong>ES</strong> : "ES"}/{
           locale === "en" ? <strong>EN</strong> : "EN"
         }</a
