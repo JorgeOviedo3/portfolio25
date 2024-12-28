@@ -1,7 +1,10 @@
 #hero {
-  height: 65vh;
+  padding-bottom: 250px;
   .wrapper {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .image {
       position: absolute;
       object-fit: cover;
@@ -16,8 +19,15 @@
       text-align: center;
       position: relative;
       z-index: 1;
-      top: 50%;
-      transform: translateY(55%);
+      transform: translateY(50%);
+      @media screen and (max-width: 970px) {
+        font-size: 48px;
+      }
+      @media screen and (max-width: 550px) {
+        transform: translateY(150%);
+
+        font-size: 24px;
+      }
     }
   }
 }

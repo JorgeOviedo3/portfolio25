@@ -1,11 +1,16 @@
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100px;
+  .nav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 100px;
+    z-index: 999999;
+  }
   #name {
     font-family: "NeueMontreal";
     font-size: 24px;
+    letter-spacing: 2px;
   }
   .links {
     display: flex;
@@ -14,6 +19,8 @@ nav {
       font-family: "NeueMontreal";
       font-size: 18px;
       text-decoration: none;
+      letter-spacing: 3px;
+
       cursor: pointer;
       &:hover {
         text-decoration-line: underline;
@@ -21,9 +28,11 @@ nav {
     }
     .language-button {
       margin-left: 20px;
+      text-decoration-line: none;
+      color: var(--color-text);
       font-family: "NeueMontreal";
       font-size: 18px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       &:hover {
         text-decoration-line: underline;
       }
