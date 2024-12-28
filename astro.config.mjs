@@ -10,7 +10,7 @@ const locales = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com/",
+  site: "https://joviedo.com/",
   trailingSlash: "always",
   build: {
     format: "directory",
