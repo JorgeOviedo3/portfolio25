@@ -16,7 +16,6 @@ export default defineConfig({
     i18n({
       locales,
       defaultLocale,
-      redirectDefaultLocale: true,
     }),
   ],
 });
