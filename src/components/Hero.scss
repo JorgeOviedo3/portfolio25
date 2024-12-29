@@ -14,21 +14,15 @@
       max-height: 856px;
     }
     h1 {
-      font-size: 72px;
-      font-family: "Mondwest";
       text-align: center;
       position: relative;
       z-index: 1;
       transform: translateY(50%);
       @media screen and (max-width: 970px) {
         transform: translateY(80%);
-
-        font-size: 48px;
       }
       @media screen and (max-width: 702px) {
         transform: translateY(140%);
-
-        font-size: 28px;
       }
     }
   }

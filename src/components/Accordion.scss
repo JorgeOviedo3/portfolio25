@@ -1,14 +1,19 @@
 .accordion {
   width: 100%;
   font-family: "NeueMontreal";
-
+  &__item:last-child {
+    border-bottom: none;
+  }
   &__item {
-    margin-bottom: 5px;
+    border-bottom: 2px solid var(--secondary-color);
+
+    scroll-margin: 44px !important;
     &__header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: end;
       cursor: pointer;
+      padding: 30px 0px;
       &:hover {
         background-color: var(--text-color);
         color: var(--background-color);
@@ -17,33 +22,59 @@
       &__left {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 10px;
+        align-items: start;
         h3 {
-          border-bottom: 6px solid var(--secondary-color);
-          font-size: 50px;
           margin: 0;
         }
         span {
           margin-right: 30px;
-          margin-top: 5px;
+          margin-top: 8px;
           font-size: 18px;
-          font-family: "NeueMontreal";
           color: var(--secondary-color);
+        }
+      }
+      &__right {
+        padding-bottom: 10px;
+        &__title {
+          font-size: 14px;
+          letter-spacing: 2px;
+        }
+        &__company {
+          font-size: 28px;
+          font-family: "Mondwest";
         }
       }
     }
     &__content {
       transition: max-height 0.2s;
-      padding: 10px;
       overflow: hidden;
-      color: white;
+      color: var(--text-color);
       max-height: 0;
       display: none;
       background-color: var(--background-color);
+      ul li {
+        font-size: 20px;
+      }
       &.active {
         display: block;
         max-height: 1000px;
+      }
+      &__description {
+        font-size: 40px;
+        font-family: "NeueMontreal";
+        margin-top: 0px;
+        max-width: 50%;
+      }
+      &__images {
+        padding: 40px 0px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        img {
+          width: 33%;
+          height: auto;
+          object-fit: cover;
+        }
       }
     }
   }

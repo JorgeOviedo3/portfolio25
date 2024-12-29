@@ -1,5 +1,7 @@
 ---
 import "./Accordion.scss";
+import project1 from "../assets/project1.png";
+import { Image } from "astro:assets";
 ---
 
 <script>
@@ -9,7 +11,7 @@ import "./Accordion.scss";
   accordionHeaders.forEach((header) => {
     header.addEventListener("click", () => {
       const accordionItem = header.parentElement;
-      const accordionContent = accordionItem.querySelector(".accordion__item__content");
+      const accordionContent = accordionItem?.querySelector(".accordion__item__content");
 
       accordionContents.forEach((content) => {
         if (content !== accordionContent) {
@@ -18,10 +20,11 @@ import "./Accordion.scss";
         }
       });
 
-      accordionContent.classList.toggle("active");
+      accordionContent?.classList.toggle("active");
 
-      if (accordionContent.classList.contains("active")) {
+      if (accordionContent?.classList.contains("active")) {
         accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+        accordionItem?.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
         accordionContent.style.maxHeight = "0";
       }
@@ -34,17 +37,32 @@ import "./Accordion.scss";
     <div class="accordion__item__header">
       <div class="accordion__item__header__left">
         <span>2024</span>
-        <h3>Stocky</h3>
+        <h3>Reactive</h3>
       </div>
       <div class="accordion__item__header__right">
         <span class="accordion__item__header__right__title">Web Development/Web Design</span>
-        <span>Freelance</span>
+        <!-- <span class="accordion__item__header__right__company">↓</span> -->
       </div>
     </div>
     <div class="accordion__item__content">
-      <p>This is the content of section 1.</p>
+      <p class="accordion__item__content__description">
+        Led the creation of an e-commerce platform for Reactive, a community based in Caracas that
+        is dedicated to enriching urban life through the integration of natural elements.
+      </p>
+      <ul>
+        <li>Javascript</li>
+        <li>React</li>
+        <li>Python</li>
+        <li>Flask</li>
+      </ul>
+      <div class="accordion__item__content__images">
+        <Image src={project1} alt="Reactive" />
+        <Image src={project1} alt="Reactive" />
+        <Image src={project1} alt="Reactive" />
+      </div>
     </div>
   </div>
+
   <div class="accordion__item">
     <div class="accordion__item__header">
       <div class="accordion__item__header__left">
@@ -53,26 +71,55 @@ import "./Accordion.scss";
       </div>
       <div class="accordion__item__header__right">
         <span class="accordion__item__header__right__title">Web Development/Web Design</span>
-        <span>Freelance</span>
+        <!-- <span class="accordion__item__header__right__company">↓</span> -->
       </div>
     </div>
     <div class="accordion__item__content">
-      <p>This is the content of section 1.</p>
+      <p class="accordion__item__content__description">
+        Led the creation of an e-commerce platform for Stocky, a community based in Caracas that is
+        dedicated to enriching urban life through the integration of natural elements.
+      </p>
+      <ul>
+        <li>React</li>
+        <li>React</li>
+        <li>React</li>
+        <li>React</li>
+      </ul>
+      <div class="accordion__item__content__images">
+        <Image src={project1} alt="Reactive" />
+        <Image src={project1} alt="Reactive" />
+        <Image src={project1} alt="Reactive" />
+      </div>
     </div>
   </div>
+
   <div class="accordion__item">
     <div class="accordion__item__header">
       <div class="accordion__item__header__left">
         <span>2024</span>
-        <h3>Stocky</h3>
+        <h3>Fyneco</h3>
       </div>
       <div class="accordion__item__header__right">
         <span class="accordion__item__header__right__title">Web Development/Web Design</span>
-        <span>Freelance</span>
+        <!-- <span class="accordion__item__header__right__company">↓</span> -->
       </div>
     </div>
     <div class="accordion__item__content">
-      <p>This is the content of section 1.</p>
+      <p class="accordion__item__content__description">
+        Led the creation of an e-commerce platform for Reactive, a community based in Reactive that
+        is dedicated to enriching urban life through the integration of natural elements.
+      </p>
+      <ul>
+        <li>React</li>
+        <li>React</li>
+        <li>React</li>
+        <li>React</li>
+      </ul>
+      <div class="accordion__item__content__images">
+        <Image src={project1} alt="Reactive" />
+        <Image src={project1} alt="Reactive" />
+        <Image src={project1} alt="Reactive" />
+      </div>
     </div>
   </div>
 </div>

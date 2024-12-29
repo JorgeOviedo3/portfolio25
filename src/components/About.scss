@@ -1,16 +1,19 @@
 #about {
-  padding: 200px 0px;
-  border-radius: 10%;
-  border-bottom: 2px solid #343434;
+  padding-top: 200px;
+  .border-bottom {
+    height: 100px;
+    border-radius: 50% 50%;
+    border-bottom: 2px solid #343434;
+    margin-top: 100px;
+  }
   .info {
     display: flex;
+    align-items: start;
     .left {
       width: 50%;
-      font-size: 48px;
-      font-family: "NeueMontreal";
       p {
+        font-size: 40px;
         font-family: "NeueMontreal";
-        font-size: 24px;
       }
     }
     .right {
@@ -21,6 +24,7 @@
         max-width: 356px;
         max-height: 476px;
         object-fit: contain;
+        filter: grayscale(100%);
       }
     }
   }

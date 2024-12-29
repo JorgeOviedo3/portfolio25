@@ -42,7 +42,7 @@
 
 html,
 body {
-  margin: 0;
+  margin: 0px;
   width: 100%;
   height: 100%;
   background-color: var(--background-color);
@@ -56,4 +56,30 @@ body {
   width: 100%;
   margin: auto;
   // border: 1px solid red;
+}
+
+h1 {
+  font-size: 72px;
+  font-family: "Mondwest";
+}
+
+h2 {
+  font-size: 55px;
+  font-family: "Mondwest";
+}
+
+h3 {
+  font-size: 50px;
+  font-family: "NeueMontreal";
+}
+
+@media screen and (max-width: 970px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 702px) {
+  h1 {
+    font-size: 28px;
+  }
 }

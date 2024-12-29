@@ -8,7 +8,7 @@
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background-color: transparent;
+    background-color: var(--background-color);
     font-size: 50px;
     cursor: pointer;
     width: 50px;
@@ -16,8 +16,17 @@
     text-align: center;
     font-family: "Mondwest";
     border: 1px solid var(--text-color);
+    color: var(--text-color);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
     &:hover {
-      transform: scale(1.05);
+      background-color: var(--text-color);
+      color: var(--background-color);
+      transition:
+        background-color 0.2s,
+        color 0.2s;
     }
   }
 </style>

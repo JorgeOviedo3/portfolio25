@@ -4,7 +4,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    height: 100px;
+    // height: 100px;
+    padding-top: 40px;
     z-index: 999999;
     mix-blend-mode: var(--mix-blend);
   }
