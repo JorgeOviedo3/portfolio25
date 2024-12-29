@@ -1,4 +1,4 @@
-<button id="themeSwitch"></button>
+<span id="themeSwitch"></span>
 
 <style>
   :global(.dark) {
@@ -11,30 +11,38 @@
     background-color: transparent;
     font-size: 50px;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
     font-family: "Mondwest";
+    border: 1px solid var(--text-color);
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 </style>
 
 <script>
-  const button = document.getElementById("themeSwitch") as HTMLButtonElement;
-  let theme = localStorage.getItem("theme");
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  function getInitialTheme() {
+    let theme = localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    theme = theme === "system" ? systemTheme : theme;
 
-  if (theme !== null) {
-    theme = theme;
-  } else {
-    theme = systemTheme;
+    if (theme === null) theme = systemTheme;
+
+    return theme;
   }
 
   function updateTheme(value: string) {
-    const theme = value === "system" ? systemTheme : value;
     document.documentElement.classList.remove("light", "dark");
-    document.documentElement.classList.add(theme);
-    button.innerHTML = theme === "light" ? "☽" : "☀";
+    document.documentElement.classList.add(value);
     localStorage.setItem("theme", value);
   }
 
-  updateTheme(theme);
+  const button = document.getElementById("themeSwitch") as HTMLButtonElement;
+  button.innerHTML = getInitialTheme() === "light" ? "☽" : "☀";
 
   button.addEventListener("click", (event: Event) => {
     let theme = localStorage.getItem("theme");
@@ -43,11 +51,12 @@
       : "light";
 
     if (theme !== null) {
-      theme = theme;
+      theme = theme === "light" ? "dark" : "light";
     } else {
       theme = systemTheme;
     }
 
-    updateTheme(theme === "light" ? "dark" : "light");
+    updateTheme(theme);
+    button.innerHTML = theme === "light" ? "☽" : "☀";
   });
 </script>

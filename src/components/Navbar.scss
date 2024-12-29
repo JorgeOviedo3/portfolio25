@@ -6,7 +6,7 @@ nav {
     position: fixed;
     height: 100px;
     z-index: 999999;
-    mix-blend-mode: difference;
+    mix-blend-mode: var(--mix-blend);
   }
   #name {
     font-family: "NeueMontreal";
@@ -21,10 +21,13 @@ nav {
       font-size: 18px;
       text-decoration: none;
       letter-spacing: 3px;
-      color: var(--color-text);
+      color: var(--text-color);
       cursor: pointer;
       &:hover {
         text-decoration-line: underline;
+      }
+      @media screen and (max-width: 702px) {
+        display: none;
       }
     }
     .language-button {

@@ -6,32 +6,32 @@ import "./About.scss";
 
 const locale = getLocale(Astro.url);
 
-const t = {
+const translation = {
   es: {
     title: "Hola Mundo, Soy Jorge",
-    text: `Un desarrollador full-stack basado en Madrid. Tengo pasión por el desarrollo web y me encanta
+    textTitle: `Un desarrollador full-stack basado en Madrid. Tengo pasión por el desarrollo web y me encanta
     crear sitios web y aplicaciones web que sean rápidos, receptivos y accesibles.`,
     socials: "Puedes encontrarme en:",
   },
   en: {
     title: "Hello World, I'm Jorge",
-    text: `A full-stack developer based in Madrid. I have a passion for web development and love to
+    textTitle: `A full-stack developer based in Madrid. I have a passion for web development and love to
     create websites and web applications that are fast, responsive, and accessible.`,
     socials: "You can find me here:",
   },
 };
 
-const translation = t[locale] || t.es;
+const t = translation[locale] || translation.es;
 ---
 
 <section class="container" id="about">
   <div class="info">
     <div class="left">
-      <h3>{translation.title}</h3>
+      <h3>{t.title}</h3>
       <p>
-        {translation.text}
+        {t.textTitle}
       </p>
-      <p>{translation.socials}</p>
+      <p>{t.socials}</p>
     </div>
     <div class="right">
       <Image src={aboutImg} alt="About" class="about-img" />

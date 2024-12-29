@@ -2,11 +2,13 @@
 import "./Projects.scss";
 import project1 from "../assets/project1.png";
 import { Image } from "astro:assets";
+import Accordion from "./Accordion.astro";
 ---
 
 <section id="projects" class="container">
   <h1 class="title">SOME OF MY WORK</h1>
-  <div class="project">
+  <Accordion />
+  <!-- <div class="project">
     <div class="project__info">
       <h2 class="project__title">REACTIVE</h2>
       <p class="project__description">AN AWESOME PLACE WHERE YOUR CODE CAN BE SEEN.</p>
@@ -35,5 +37,5 @@ import { Image } from "astro:assets";
     <div class="project__image">
       <Image src={project1} alt="Reactive" />
     </div>
-  </div>
+  </div> -->
 </section>

@@ -9,9 +9,11 @@ const locale = getLocale(Astro.url);
   <div class="nav_wrapper container">
     <a id="name">JORGE OVIEDO</a>
     <div class="links">
-      <a target="_blank" href="www.github.com/jorgeoviedo3" class="link glitch">GITHUB</a>
-      <a target="_blank" href="www.linkedin.com/in/jorgeoviedo3" class="link glitch">LINKEDIN</a>
-      <a href={locale === "es" ? "/en/" : "/"} class="language-button"
+      <a target="_blank" href="https://www.github.com/jorgeoviedo3" class="link glitch">GITHUB</a>
+      <a target="_blank" href="https://www.linkedin.com/in/jorgeoviedo3/" class="link glitch"
+        >LINKEDIN</a
+      >
+      <a href={locale === "es" ? "/en/" : "/"} class="light-mode-only language-button"
         >{locale === "es" ? <strong>ES</strong> : "ES"}/{
           locale === "en" ? <strong>EN</strong> : "EN"
         }</a

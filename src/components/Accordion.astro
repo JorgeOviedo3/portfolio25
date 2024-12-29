@@ -1,0 +1,78 @@
+---
+import "./Accordion.scss";
+---
+
+<script>
+  const accordionHeaders = document.querySelectorAll(".accordion__item__header");
+  const accordionContents = document.querySelectorAll(".accordion__item__content");
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", () => {
+      const accordionItem = header.parentElement;
+      const accordionContent = accordionItem.querySelector(".accordion__item__content");
+
+      accordionContents.forEach((content) => {
+        if (content !== accordionContent) {
+          content.classList.remove("active");
+          content.style.maxHeight = "0";
+        }
+      });
+
+      accordionContent.classList.toggle("active");
+
+      if (accordionContent.classList.contains("active")) {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+      } else {
+        accordionContent.style.maxHeight = "0";
+      }
+    });
+  });
+</script>
+
+<div class="accordion">
+  <div class="accordion__item">
+    <div class="accordion__item__header">
+      <div class="accordion__item__header__left">
+        <span>2024</span>
+        <h3>Stocky</h3>
+      </div>
+      <div class="accordion__item__header__right">
+        <span class="accordion__item__header__right__title">Web Development/Web Design</span>
+        <span>Freelance</span>
+      </div>
+    </div>
+    <div class="accordion__item__content">
+      <p>This is the content of section 1.</p>
+    </div>
+  </div>
+  <div class="accordion__item">
+    <div class="accordion__item__header">
+      <div class="accordion__item__header__left">
+        <span>2024</span>
+        <h3>Stocky</h3>
+      </div>
+      <div class="accordion__item__header__right">
+        <span class="accordion__item__header__right__title">Web Development/Web Design</span>
+        <span>Freelance</span>
+      </div>
+    </div>
+    <div class="accordion__item__content">
+      <p>This is the content of section 1.</p>
+    </div>
+  </div>
+  <div class="accordion__item">
+    <div class="accordion__item__header">
+      <div class="accordion__item__header__left">
+        <span>2024</span>
+        <h3>Stocky</h3>
+      </div>
+      <div class="accordion__item__header__right">
+        <span class="accordion__item__header__right__title">Web Development/Web Design</span>
+        <span>Freelance</span>
+      </div>
+    </div>
+    <div class="accordion__item__content">
+      <p>This is the content of section 1.</p>
+    </div>
+  </div>
+</div>
