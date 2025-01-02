@@ -2,6 +2,70 @@
 import "./Accordion.scss";
 import project1 from "../assets/project1.png";
 import { Image } from "astro:assets";
+import { getLocale } from "astro-i18n-aut";
+
+const locale = getLocale(Astro.url);
+
+const translation = {
+  es: {
+    projects: [
+      {
+        title: "ByteReviews",
+        year: "2023",
+        description:
+          "Led the creation of an e-commerce platform for Reactive, a community based in Reactive that is dedicated to enriching urban life through the integration of natural elements.",
+        technologies: ["React", "React", "React", "React"],
+        images: [project1, project1, project1],
+      },
+      {
+        title: "Reactive",
+        year: "2023",
+        description:
+          "Desarrollo y diseño de una plataforma de red social, Reactive, una comunidad que se dedica a ayudar a los desarrolladores de React a través de la integración de Networking.",
+        technologies: ["Javascript", "React", "Python", "Flask"],
+        images: [project1, project1, project1],
+      },
+      {
+        title: "Stocky",
+        year: "2022",
+        description:
+          "Desarrollo y diseño de un sistema de gestión de inventario, Stocky, enfocado en ayudar a las empresas a gestionar su inventario y ventas.",
+        technologies: ["React", "React", "React", "React"],
+        images: [project1, project1, project1],
+      },
+    ],
+  },
+  en: {
+    projects: [
+      {
+        title: "ByteReviews",
+        year: "2023",
+        description:
+          "Led the creation of an e-commerce platform for Reactive, a community based in Reactive that is dedicated to enriching urban life through the integration of natural elements.",
+        technologies: ["Next.js", "Firebase"],
+        images: [project1, project1, project1],
+      },
+      {
+        title: "Reactive",
+        year: "2023",
+        description:
+          "Developed an designed a social network platform, Reactive, a community that is dedicated to help React developers through the integration of Networking.",
+        technologies: ["Javascript", "React", "Python", "Flask"],
+        images: [project1, project1, project1],
+      },
+      {
+        title: "Stocky",
+        year: "2022",
+        description:
+          "Developed and designed an inventory management system, Stocky, focused on helping businesses manage their inventory and sales.",
+        technologies: ["Javascript", "React", "Python", "Flask"],
+        images: [project1, project1, project1],
+      },
+    ],
+  },
+};
+
+const t = translation[locale] || translation.es;
 ---
 
 <script>
@@ -33,93 +97,33 @@ import { Image } from "astro:assets";
 </script>
 
 <div class="accordion">
-  <div class="accordion__item">
-    <div class="accordion__item__header">
-      <div class="accordion__item__header__left">
-        <span>2024</span>
-        <h3>Reactive</h3>
+  {
+    t.projects.map((project: any) => (
+      <div class="accordion__item">
+        <div class="accordion__item__header">
+          <div class="accordion__item__header__left">
+            <span>{project.year}</span>
+            <h3>{project.title}</h3>
+          </div>
+          <div class="accordion__item__header__right">
+            {/* <p class="accordion__item__header__right__title">Web Development/Web Design</p> */}
+            <span class="accordion__item__header__right__company">↓</span>
+          </div>
+        </div>
+        <div class="accordion__item__content">
+          <p class="accordion__item__content__description">{project.description}</p>
+          <ul>
+            {project.technologies.map((technology: string) => (
+              <li>{technology}</li>
+            ))}
+          </ul>
+          <div class="accordion__item__content__images">
+            {project.images.map((image: string) => (
+              <Image src={image} alt={project.title} />
+            ))}
+          </div>
+        </div>
       </div>
-      <div class="accordion__item__header__right">
-        <span class="accordion__item__header__right__title">Web Development/Web Design</span>
-        <!-- <span class="accordion__item__header__right__company">↓</span> -->
-      </div>
-    </div>
-    <div class="accordion__item__content">
-      <p class="accordion__item__content__description">
-        Led the creation of an e-commerce platform for Reactive, a community based in Caracas that
-        is dedicated to enriching urban life through the integration of natural elements.
-      </p>
-      <ul>
-        <li>Javascript</li>
-        <li>React</li>
-        <li>Python</li>
-        <li>Flask</li>
-      </ul>
-      <div class="accordion__item__content__images">
-        <Image src={project1} alt="Reactive" />
-        <Image src={project1} alt="Reactive" />
-        <Image src={project1} alt="Reactive" />
-      </div>
-    </div>
-  </div>
-
-  <div class="accordion__item">
-    <div class="accordion__item__header">
-      <div class="accordion__item__header__left">
-        <span>2024</span>
-        <h3>Stocky</h3>
-      </div>
-      <div class="accordion__item__header__right">
-        <span class="accordion__item__header__right__title">Web Development/Web Design</span>
-        <!-- <span class="accordion__item__header__right__company">↓</span> -->
-      </div>
-    </div>
-    <div class="accordion__item__content">
-      <p class="accordion__item__content__description">
-        Led the creation of an e-commerce platform for Stocky, a community based in Caracas that is
-        dedicated to enriching urban life through the integration of natural elements.
-      </p>
-      <ul>
-        <li>React</li>
-        <li>React</li>
-        <li>React</li>
-        <li>React</li>
-      </ul>
-      <div class="accordion__item__content__images">
-        <Image src={project1} alt="Reactive" />
-        <Image src={project1} alt="Reactive" />
-        <Image src={project1} alt="Reactive" />
-      </div>
-    </div>
-  </div>
-
-  <div class="accordion__item">
-    <div class="accordion__item__header">
-      <div class="accordion__item__header__left">
-        <span>2024</span>
-        <h3>Fyneco</h3>
-      </div>
-      <div class="accordion__item__header__right">
-        <span class="accordion__item__header__right__title">Web Development/Web Design</span>
-        <!-- <span class="accordion__item__header__right__company">↓</span> -->
-      </div>
-    </div>
-    <div class="accordion__item__content">
-      <p class="accordion__item__content__description">
-        Led the creation of an e-commerce platform for Reactive, a community based in Reactive that
-        is dedicated to enriching urban life through the integration of natural elements.
-      </p>
-      <ul>
-        <li>React</li>
-        <li>React</li>
-        <li>React</li>
-        <li>React</li>
-      </ul>
-      <div class="accordion__item__content__images">
-        <Image src={project1} alt="Reactive" />
-        <Image src={project1} alt="Reactive" />
-        <Image src={project1} alt="Reactive" />
-      </div>
-    </div>
-  </div>
+    ))
+  }
 </div>

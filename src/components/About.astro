@@ -11,11 +11,127 @@ const translation = {
     title: "Hola Mundo, Soy Jorge",
     textTitle: `Un desarrollador full-stack basado en Madrid. Tengo pasión por el desarrollo web y me encanta
     crear sitios web y aplicaciones web que sean rápidos, receptivos y accesibles.`,
+    experience: {
+      title: "Experiencia",
+      items: [
+        {
+          year: "2022 ~",
+          position: "Desarrollador Frontend",
+          company: "Freelance",
+          responsibilities: [
+            "Desarrollo de sitios web responsivos con diseño Mobile First optimizados para SEO.",
+            "Implementación de tecnologías como TypeScript, Next.js, Tailwind y React-Redux.",
+            "Mantenimiento de aplicaciones web en React y pruebas automatizadas con React Testing Library.",
+            "Uso de control de versiones con Git y GitHub.",
+            "Diseño de maquetas utilizando Figma, Adobe Illustrator y Photoshop.",
+          ],
+        },
+        {
+          year: "2022 2023",
+          position: "Desarrollador Frontend (Prácticas)",
+          company: "CardTec",
+          responsibilities: [
+            "Mantenimiento de interfaces SPA con React.js.",
+            "Maquetación de Front-End.",
+            "Resolución de bugs y optimización de plataforma de gestión de recargas en telefonía móvil.",
+            "Colaboración bajo la metodología Scrum, participando en dailies y Sprints.",
+          ],
+        },
+      ],
+    },
+    certifications: {
+      title: "Certificaciones",
+      items: [
+        {
+          year: "2023",
+          name: "React Query",
+          company: "DevTalles",
+        },
+        {
+          year: "2023",
+          name: "Programación con Python",
+          company: "Universidad UNEFM",
+        },
+        {
+          year: "2023",
+          name: "Desarrollo de Software Full Stack",
+          company: "4Geeks Academy",
+        },
+        {
+          year: "2022",
+          name: "Algoritmos y Estructuras de Datos en Javascript",
+          company: "freeCodeCamp",
+        },
+        {
+          year: "2022",
+          name: "Diseño Web Responsivo",
+          company: "freeCodeCamp",
+        },
+      ],
+    },
   },
   en: {
     title: "Hello World, I'm Jorge",
     textTitle: `A full-stack developer based in Madrid. I have a passion for web development and love to
     create websites and web applications that are fast, responsive, and accessible.`,
+    experience: {
+      title: "Experience",
+      items: [
+        {
+          year: "2022 ~",
+          position: "Frontend Developer",
+          company: "Freelance",
+          responsibilities: [
+            "Development of responsive websites with Mobile First Design optimized for SEO.",
+            "Implementation of technologies such as TypeScript, Next.js, Tailwind and React-Redux.",
+            "Maintenance of web applications in React and automated testing with React Testing Library.",
+            "Using version control with Git and GitHub.",
+            "Mockup design using Figma, Adobe Illustrator and Photoshop.",
+          ],
+        },
+        {
+          year: "2022 2023",
+          position: "Frontend Developer",
+          company: "CardTec",
+          responsibilities: [
+            "Maintenance of SPA interfaces with React.js.",
+            "Front-End Layout.",
+            "Bug resolution and optimization of mobile phone recharge management platform.",
+            "Collaboration under the Scrum methodology, participating in dailies and Sprints.",
+          ],
+        },
+      ],
+    },
+    certifications: {
+      title: "Certifications",
+      items: [
+        {
+          year: "2023",
+          name: "React Query",
+          company: "DevTalles",
+        },
+        {
+          year: "2023",
+          name: "Programming with Pyton",
+          company: "UNEFM University",
+        },
+        {
+          year: "2023",
+          name: "Full Stack Software Development PT",
+          company: "4Geeks Academy",
+        },
+        {
+          year: "2022",
+          name: "Javascript Algorithms and Data Structures",
+          company: "freeCodeCamp",
+        },
+        {
+          year: "2022",
+          name: "Responsive Web Design",
+          company: "freeCodeCamp",
+        },
+      ],
+    },
   },
 };
 
@@ -33,6 +149,51 @@ const t = translation[locale] || translation.es;
     <div class="right">
       <Image src={aboutImg} alt="About" class="about-img" />
     </div>
+  </div>
+  <div class="experiences">
+    <h3>{t.experience.title}</h3>
+    {
+      t.experience.items.map((item: any) => (
+        <div class="experience">
+          <div class="experience-header">
+            <div class="experience-header__left">
+              <span>{item.year}</span>
+              <h4>{item.position}</h4>
+            </div>
+            <div class="experience-header__right">
+              <p>{item.company}</p>
+            </div>
+          </div>
+          <div class="experience-content">
+            <h5 />
+            <ul>
+              {item.responsibilities.map((responsibility: string) => (
+                <li>
+                  <p>{responsibility}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="certifications">
+    <h3>{t.certifications.title}</h3>
+    {
+      t.certifications.items.map((item: any) => (
+        <div class="certification">
+          <div class="certification__left">
+            <span>{item.year}</span>
+            <h4>{item.name}</h4>
+          </div>
+          <div class="certification__right">
+            <p>{item.company}</p>
+            <span>↗</span>
+          </div>
+        </div>
+      ))
+    }
   </div>
   <div class="border-bottom"></div>
 </section>

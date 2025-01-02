@@ -28,4 +28,88 @@
       }
     }
   }
+  .certifications,
+  .experiences {
+    h3 {
+      text-align: center;
+      margin-top: 200px;
+    }
+    .certification:last-child {
+      border-bottom: none;
+    }
+    .certification,
+    .experience-header {
+      border-bottom: 2px solid var(--secondary-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 20px 0px;
+      color: var(--text-color);
+      &__left {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        h4 {
+          margin: 0;
+        }
+        span {
+          margin-right: 30px;
+          margin-top: 8px;
+          font-family: "NeueMontreal";
+          font-size: 14px;
+          color: var(--secondary-color);
+          max-width: 20px;
+          text-align: end;
+        }
+      }
+      &__right {
+        display: flex;
+        span {
+          font-size: 20px;
+          color: var(--secondary-color);
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0px;
+          border: 1px solid var(--secondary-color);
+          border-radius: 100%;
+          line-height: 0%;
+        }
+        p {
+          letter-spacing: 3px;
+          margin: 0px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .certification {
+    &:hover {
+      cursor: pointer;
+      background-color: var(--text-color);
+      color: var(--background-color);
+      .certification__right {
+        span {
+          border-color: var(--background-color);
+          color: var(--background-color);
+          transform: rotate(45deg);
+          transition: transform 0.5s, color 0.5s, background-color 0.5s;
+        }
+      }
+    }
+  }
+  .experience {
+    .experience-content {
+      padding: 20px;
+      ul {
+        font-family: "Mondwest";
+        list-style-type: "☓ ";
+      }
+      ul li {
+        font-size: 20px;
+      }
+    }
+  }
 }

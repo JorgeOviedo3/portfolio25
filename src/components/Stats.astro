@@ -1,18 +1,55 @@
 ---
+import { getLocale } from "astro-i18n-aut";
 import "./Stats.scss";
+
+const locale = getLocale(Astro.url);
+
+const translation = {
+  es: {
+    stats: [
+      {
+        number: "215.000",
+        text: "Líneas de código cambiadas.",
+      },
+      {
+        number: "3",
+        text: "Años de experiencia.",
+      },
+      {
+        number: "21",
+        text: "Proyectos completados.",
+      },
+    ],
+  },
+  en: {
+    stats: [
+      {
+        number: "215.000",
+        text: "Lines of code changed.",
+      },
+      {
+        number: "3",
+        text: "Years of experience.",
+      },
+      {
+        number: "21",
+        text: "Projects completed.",
+      },
+    ],
+  },
+};
 ---
 
 <section id="stats" class="container">
-  <div class="stat-wrapper">
-    <p class="number">215.000<span class="icon">+</span></p>
-    <p class="text">Lines of code changed.</p>
-  </div>
-  <div class="stat-wrapper">
-    <p class="number">3<span class="icon">+</span></p>
-    <p class="text">Years of experience.</p>
-  </div>
-  <div class="stat-wrapper">
-    <p class="number">21<span class="icon">+</span></p>
-    <p class="text">Projects completed.</p>
-  </div>
+  {
+    translation[locale].stats.map((stat: any) => (
+      <div class="stat-wrapper">
+        <p class="number">
+          {stat.number}
+          <span class="icon">+</span>
+        </p>
+        <p class="text">{stat.text}</p>
+      </div>
+    ))
+  }
 </section>
