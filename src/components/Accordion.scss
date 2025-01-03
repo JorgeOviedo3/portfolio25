@@ -17,6 +17,15 @@
       &:hover {
         background-color: var(--text-color);
         color: var(--background-color);
+        .accordion__item__header__right__company {
+          border-color: var(--background-color);
+          color: var(--background-color);
+          transform: rotate(45deg);
+          transition: transform 0.5s, color 0.5s, background-color 0.5s;
+        }
+        .accordion__item__header__left span {
+          color: var(--background-color);
+        }
       }
       color: var(--text-color);
       &__left {
@@ -51,6 +60,7 @@
           border: 1px solid var(--secondary-color);
           border-radius: 100%;
           line-height: 0%;
+          transition: transform 0.5s, color 0.5s, background-color 0.5s;
         }
       }
     }

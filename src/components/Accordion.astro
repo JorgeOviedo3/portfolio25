@@ -1,6 +1,17 @@
 ---
 import "./Accordion.scss";
-import project1 from "../assets/project1.png";
+import reactive1 from "../assets/projects/reactive1.webp";
+import reactive2 from "../assets/projects/reactive2.webp";
+import reactive3 from "../assets/projects/reactive3.webp";
+
+import bytereviews1 from "../assets/projects/bytereviews1.webp";
+import bytereviews2 from "../assets/projects/bytereviews2.webp";
+import bytereviews3 from "../assets/projects/bytereviews3.webp";
+
+import stocky1 from "../assets/projects/stocky1.webp";
+import stocky2 from "../assets/projects/stocky2.webp";
+import stocky3 from "../assets/projects/stocky3.webp";
+
 import { Image } from "astro:assets";
 import { getLocale } from "astro-i18n-aut";
 
@@ -8,64 +19,48 @@ const locale = getLocale(Astro.url);
 
 const translation = {
   es: {
-    projects: [
-      {
-        title: "ByteReviews",
-        year: "2023",
-        description:
-          "Led the creation of an e-commerce platform for Reactive, a community based in Reactive that is dedicated to enriching urban life through the integration of natural elements.",
-        technologies: ["React", "React", "React", "React"],
-        images: [project1, project1, project1],
-      },
-      {
-        title: "Reactive",
-        year: "2023",
-        description:
-          "Desarrollo y diseño de una plataforma de red social, Reactive, una comunidad que se dedica a ayudar a los desarrolladores de React a través de la integración de Networking.",
-        technologies: ["Javascript", "React", "Python", "Flask"],
-        images: [project1, project1, project1],
-      },
-      {
-        title: "Stocky",
-        year: "2022",
-        description:
-          "Desarrollo y diseño de un sistema de gestión de inventario, Stocky, enfocado en ayudar a las empresas a gestionar su inventario y ventas.",
-        technologies: ["React", "React", "React", "React"],
-        images: [project1, project1, project1],
-      },
-    ],
+    ByteReviews:
+      "Desarrollo y diseño de una plataforma de reseñas, ByteReviews, una comunidad que se dedica a valorar productos de tecnologia.",
+    Reactive:
+      "Desarrollo y diseño de red social, Reactive, una comunidad que se dedica a ayudar a los desarrolladores de React a través de la integración de Networking.",
+    Stocky:
+      "Desarrollo y diseño de un sistema de gestión de inventario, Stocky, enfocado en ayudar a las empresas a gestionar su inventario y ventas.",
   },
   en: {
-    projects: [
-      {
-        title: "ByteReviews",
-        year: "2023",
-        description:
-          "Led the creation of an e-commerce platform for Reactive, a community based in Reactive that is dedicated to enriching urban life through the integration of natural elements.",
-        technologies: ["Next.js", "Firebase"],
-        images: [project1, project1, project1],
-      },
-      {
-        title: "Reactive",
-        year: "2023",
-        description:
-          "Developed an designed a social network platform, Reactive, a community that is dedicated to help React developers through the integration of Networking.",
-        technologies: ["Javascript", "React", "Python", "Flask"],
-        images: [project1, project1, project1],
-      },
-      {
-        title: "Stocky",
-        year: "2022",
-        description:
-          "Developed and designed an inventory management system, Stocky, focused on helping businesses manage their inventory and sales.",
-        technologies: ["Javascript", "React", "Python", "Flask"],
-        images: [project1, project1, project1],
-      },
-    ],
+    ByteReviews:
+      "Led the creation of an e-commerce platform for Reactive, a community based in Reactive that is dedicated to enriching urban life through the integration of natural elements.",
+    Reactive:
+      "Developed and designed a social network platform, Reactive, a community that is dedicated to help React developers through the integration of Networking.",
+    Stocky:
+      "Developed and designed an inventory management system, Stocky, focused on helping businesses manage their inventory and sales.",
   },
 };
 
 const t = translation[locale] || translation.es;
+
+const projects = [
+  {
+    title: "ByteReviews",
+    year: "2023",
+    description: translation[locale].ByteReviews,
+    technologies: ["React", "Next.js", "Firebase"],
+    images: [bytereviews1, bytereviews2, bytereviews3],
+  },
+  {
+    title: "Reactive",
+    year: "2023",
+    description: translation[locale].Reactive,
+    technologies: ["Javascript", "React", "Python", "Flask"],
+    images: [reactive1, reactive2, reactive3],
+  },
+  {
+    title: "Stocky",
+    year: "2022",
+    description: translation[locale].Stocky,
+    technologies: ["Javascript", "React", "Python", "Flask"],
+    images: [stocky1, stocky2, stocky3],
+  },
+];
 ---
 
 <script>
@@ -98,7 +93,7 @@ const t = translation[locale] || translation.es;
 
 <div class="accordion">
   {
-    t.projects.map((project: any) => (
+    projects.map((project: any) => (
       <div class="accordion__item">
         <div class="accordion__item__header">
           <div class="accordion__item__header__left">
@@ -106,8 +101,7 @@ const t = translation[locale] || translation.es;
             <h3>{project.title}</h3>
           </div>
           <div class="accordion__item__header__right">
-            {/* <p class="accordion__item__header__right__title">Web Development/Web Design</p> */}
-            <span class="accordion__item__header__right__company">↓</span>
+            <span class="accordion__item__header__right__company">↘</span>
           </div>
         </div>
         <div class="accordion__item__content">

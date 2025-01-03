@@ -2,21 +2,47 @@
   height: 80vh;
   .wrapper {
     position: relative;
+    height: 100%;
+    background-image: url(/src/assets/gradient2.png);
+    object-fit: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 10vh;
+      height: 100%;
+      .email-footer {
+        color: var(--text-color);
+      }
+    }
     .image {
       position: absolute;
       object-fit: cover;
       top: 50%;
       max-width: 100vw;
       max-height: 856px;
-    }
-    h1 {
-      font-size: 72px;
-      font-family: "Mondwest";
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      top: 100%;
-      transform: translateY(500%);
+      z-index: -1;
     }
   }
+  .copyright {
+    text-align: center;
+    font-family: "NeueMontreal";
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  // h1 {
+  //   font-size: 72px;
+  //   font-family: "Mondwest";
+  //   text-align: center;
+  //   position: relative;
+  //   z-index: 1;
+  //   top: 100%;
+  //   transform: translateY(500%);
+  // }
 }

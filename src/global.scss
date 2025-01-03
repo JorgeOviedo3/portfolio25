@@ -16,14 +16,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Editorial";
-  src: url("/fonts/Editorial.otf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --background-color: #e5e8ec;
   --primary-color: #58ff77;
@@ -32,12 +24,22 @@
   --mix-blend: normal;
 }
 
+.show-dark {
+  display: none;
+}
+
 .dark {
   --background-color: #0d0d0d;
   --primary-color: #58ff77;
   --secondary-color: grey;
   --text-color: #c3c7cf;
   --mix-blend: difference;
+  .hide-dark {
+    display: none;
+  }
+  .show-dark {
+    display: block;
+  }
 }
 
 html,

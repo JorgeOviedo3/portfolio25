@@ -14,7 +14,7 @@ import Theme from "../components/Theme.astro";
 <script>
   import { PowerGlitch } from "powerglitch";
 
-  PowerGlitch.glitch(".glitch", {
+  PowerGlitch.glitch(".glitch-hover", {
     playMode: "hover",
     hideOverflow: false,
     timing: {
@@ -33,6 +33,32 @@ import Theme from "../components/Theme.astro";
     },
     slice: {
       count: 10,
+      velocity: 10,
+      minHeight: 0.02,
+      maxHeight: 0.4,
+      hueRotate: true,
+    },
+  });
+
+  PowerGlitch.glitch(".glitch-always", {
+    playMode: "always",
+    hideOverflow: false,
+    timing: {
+      duration: 1000,
+      iterations: 15,
+      easing: "ease-in-out",
+    },
+    glitchTimeSpan: {
+      start: 0.4,
+      end: 0.7,
+    },
+    shake: {
+      velocity: 10,
+      amplitudeX: 0.4,
+      amplitudeY: 0.4,
+    },
+    slice: {
+      count: 4,
       velocity: 10,
       minHeight: 0.02,
       maxHeight: 0.4,

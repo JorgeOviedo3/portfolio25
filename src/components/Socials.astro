@@ -1,0 +1,22 @@
+---
+import "./Socials.scss";
+import { Image } from "astro:assets";
+
+import github from "../assets/socials/github.svg";
+import githubDark from "../assets/socials/githubDark.svg";
+import linkedin from "../assets/socials/linkedin.svg";
+---
+
+<div class="socials">
+  <a class="hide-dark" href="https://github.com/jorgeoviedo3" target="_blank">
+    <Image src={github} alt="Github" />
+  </a>
+  <a class="show-dark" href="https://github.com/jorgeoviedo3" target="_blank">
+    <Image src={githubDark} alt="Github" />
+  </a>
+  <a href="https://www.linkedin.com/in/jorgeoviedo3/" target="_blank">
+    <Image src={linkedin} alt="Linkedin" />
+  </a>
+  <a class="link" href="mailto:hola@joviedo.com" target="_blank">MAIL</a>
+  <a class="link" href="" target="_blank">CURRICULUM</a>
+</div>

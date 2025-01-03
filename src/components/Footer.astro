@@ -1,12 +1,35 @@
 ---
 import "./Footer.scss";
-import gradient from "../assets/gradient2.png";
-import { Image } from "astro:assets";
+import { getLocale } from "astro-i18n-aut";
+import Socials from "./Socials.astro";
+
+const locale = getLocale(Astro.url);
+
+const translation = {
+  es: {
+    title: "Trabajemos en algo juntos, ",
+    link: "di hola.",
+  },
+  en: {
+    title: "Let’s work on something together, ",
+    link: "say hi.",
+  },
+};
+
+const t = translation[locale];
 ---
 
 <footer id="footer" class="container">
   <div class="wrapper">
-    <h1>Let’s work on something together, say hi.</h1>
-    <Image class="image glitch" src={gradient} alt="gradient" />
+    <!-- <Image class="image" src={gradient} alt="gradient" /> -->
+    <div class="wrapper__content">
+      <h1>
+        {t.title}<a class="email-footer" target="_blank" href="mailto:hola@joviedo.com">{t.link}</a>
+      </h1>
+      <Socials />
+      <a href="https://github.com/jorgeoviedo3" target="_blank" class="copyright"
+        >Jorge Oviedo©{new Date().getFullYear()}</a
+      >
+    </div>
   </div>
 </footer>

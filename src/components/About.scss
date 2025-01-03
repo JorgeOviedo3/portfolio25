@@ -3,7 +3,7 @@
   .border-bottom {
     height: 100px;
     border-radius: 50% 50%;
-    border-bottom: 2px solid #343434;
+    // border-bottom: 2px solid #343434;
     margin-top: 100px;
   }
   .info {
@@ -11,8 +11,23 @@
     align-items: start;
     .left {
       width: 50%;
+      h2 {
+        margin-top: 0px;
+      }
+      .technologies {
+        .technologies-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          p {
+            border: 1px solid var(--secondary-color);
+            margin: 0px;
+            padding: 10px;
+          }
+        }
+      }
       p {
-        font-size: 40px;
+        // font-size: 40px;
         font-family: "NeueMontreal";
       }
     }
@@ -20,11 +35,14 @@
       width: 50%;
       display: flex;
       justify-content: end;
+      flex-direction: column;
+      align-items: end;
+      gap: 20px;
       img {
         max-width: 356px;
         max-height: 476px;
         object-fit: contain;
-        filter: grayscale(100%);
+        // filter: grayscale(100%);
       }
     }
   }
@@ -76,6 +94,7 @@
           border: 1px solid var(--secondary-color);
           border-radius: 100%;
           line-height: 0%;
+          transition: transform 0.5s, color 0.5s, background-color 0.5s;
         }
         p {
           letter-spacing: 3px;
@@ -86,6 +105,7 @@
     }
   }
   .certification {
+    text-decoration: none;
     &:hover {
       cursor: pointer;
       background-color: var(--text-color);
@@ -105,7 +125,7 @@
       padding: 20px;
       ul {
         font-family: "Mondwest";
-        list-style-type: "☓ ";
+        // list-style-type: "☓ ";
       }
       ul li {
         font-size: 20px;

@@ -3,14 +3,16 @@ import { getLocale } from "astro-i18n-aut";
 import { Image } from "astro:assets";
 import aboutImg from "../assets/about.png";
 import "./About.scss";
+import Socials from "./Socials.astro";
 
 const locale = getLocale(Astro.url);
 
 const translation = {
   es: {
     title: "Hola Mundo, Soy Jorge",
-    textTitle: `Un desarrollador full-stack basado en Madrid. Tengo pasión por el desarrollo web y me encanta
-    crear sitios web y aplicaciones web que sean rápidos, receptivos y accesibles.`,
+    textTitle: `Un desarrollador Frontend ubicado en Madrid. Apasionado por
+    crear sitios y aplicaciones web que sean rápidos y accesibles.`,
+    technologies: "Tecnologías",
     experience: {
       title: "Experiencia",
       items: [
@@ -46,26 +48,31 @@ const translation = {
           year: "2023",
           name: "React Query",
           company: "DevTalles",
+          link: "https://cursos.devtalles.com/certificates/0hkrdbbh3i",
         },
         {
           year: "2023",
           name: "Programación con Python",
-          company: "Universidad UNEFM",
+          company: "Universidad Nacional Experimental Francisco de Miranda",
+          link: "https://utfs.io/f/fEVrcPOd8IS4QhtouQCFJWswBeGpFt0K742nE6ZUYDVfHPh9",
         },
         {
           year: "2023",
           name: "Desarrollo de Software Full Stack",
           company: "4Geeks Academy",
+          link: "https://certificate.4geeks.com/c3b2581580190f5d838da6d7d12ed0768635e3ff",
         },
         {
           year: "2022",
           name: "Algoritmos y Estructuras de Datos en Javascript",
           company: "freeCodeCamp",
+          link: "https://www.freecodecamp.org/certification/fcc45806cec-e610-4c60-8b82-cabda7cecc87/javascript-algorithms-and-data-structures",
         },
         {
           year: "2022",
           name: "Diseño Web Responsivo",
           company: "freeCodeCamp",
+          link: "https://www.freecodecamp.org/certification/fcc45806cec-e610-4c60-8b82-cabda7cecc87/responsive-web-design",
         },
       ],
     },
@@ -74,6 +81,7 @@ const translation = {
     title: "Hello World, I'm Jorge",
     textTitle: `A full-stack developer based in Madrid. I have a passion for web development and love to
     create websites and web applications that are fast, responsive, and accessible.`,
+    technologies: "Technologies",
     experience: {
       title: "Experience",
       items: [
@@ -109,26 +117,31 @@ const translation = {
           year: "2023",
           name: "React Query",
           company: "DevTalles",
+          link: "https://cursos.devtalles.com/certificates/0hkrdbbh3i",
         },
         {
           year: "2023",
           name: "Programming with Pyton",
-          company: "UNEFM University",
+          company: "National Experimental Francisco de Miranda University",
+          link: "https://utfs.io/f/fEVrcPOd8IS4QhtouQCFJWswBeGpFt0K742nE6ZUYDVfHPh9",
         },
         {
           year: "2023",
           name: "Full Stack Software Development PT",
           company: "4Geeks Academy",
+          link: "https://certificate.4geeks.com/c3b2581580190f5d838da6d7d12ed0768635e3ff",
         },
         {
           year: "2022",
           name: "Javascript Algorithms and Data Structures",
           company: "freeCodeCamp",
+          link: "https://www.freecodecamp.org/certification/fcc45806cec-e610-4c60-8b82-cabda7cecc87/javascript-algorithms-and-data-structures",
         },
         {
           year: "2022",
           name: "Responsive Web Design",
           company: "freeCodeCamp",
+          link: "https://www.freecodecamp.org/certification/fcc45806cec-e610-4c60-8b82-cabda7cecc87/responsive-web-design",
         },
       ],
     },
@@ -136,6 +149,21 @@ const translation = {
 };
 
 const t = translation[locale] || translation.es;
+
+const technologies = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Python",
+  "Flask",
+  "Tailwind",
+  "Redux",
+  "React Testing Library",
+  "Figma",
+  "Adobe Illustrator/Photoshop",
+  "Git/GitHub",
+];
 ---
 
 <section class="container" id="about">
@@ -145,9 +173,16 @@ const t = translation[locale] || translation.es;
       <p>
         {t.textTitle}
       </p>
+      <div class="technologies">
+        <h4>{t.technologies}</h4>
+        <div class="technologies-list">
+          {technologies.map((tech) => <p>{tech}</p>)}
+        </div>
+      </div>
     </div>
     <div class="right">
       <Image src={aboutImg} alt="About" class="about-img" />
+      <Socials />
     </div>
   </div>
   <div class="experiences">
@@ -182,7 +217,7 @@ const t = translation[locale] || translation.es;
     <h3>{t.certifications.title}</h3>
     {
       t.certifications.items.map((item: any) => (
-        <div class="certification">
+        <a href={item.link} target="_blank" class="certification">
           <div class="certification__left">
             <span>{item.year}</span>
             <h4>{item.name}</h4>
@@ -191,7 +226,7 @@ const t = translation[locale] || translation.es;
             <p>{item.company}</p>
             <span>↗</span>
           </div>
-        </div>
+        </a>
       ))
     }
   </div>
