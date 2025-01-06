@@ -16,7 +16,7 @@ const translation = {
   },
 };
 
-const t = translation[locale];
+const t = translation[locale as keyof typeof translation];
 ---
 
 <footer id="footer" class="container">

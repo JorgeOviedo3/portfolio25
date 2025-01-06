@@ -4,6 +4,12 @@ import Image from "astro/components/Image.astro";
 import gradient from "../assets/gradient.png";
 import "./Hero.scss";
 
+type T = {
+  charge: string;
+  based: string;
+  portfolio: string;
+};
+
 const locale = getLocale(Astro.url);
 
 const t = {
@@ -23,7 +29,7 @@ const translation = t[locale] || t.es;
 ---
 
 <section class="container" id="hero">
-  <div class="wrapper">
+  <div class="hero-wrapper">
     <h1>
       JORGE OVIEDO シ<br />{translation.charge}<br />☼ {translation.based} ☀ <br />
       {translation.portfolio} 25⚗✨

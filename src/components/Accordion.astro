@@ -1,5 +1,9 @@
 ---
 import "./Accordion.scss";
+
+import { Image } from "astro:assets";
+import { getLocale } from "astro-i18n-aut";
+
 import reactive1 from "../assets/projects/reactive1.webp";
 import reactive2 from "../assets/projects/reactive2.webp";
 import reactive3 from "../assets/projects/reactive3.webp";
@@ -11,9 +15,6 @@ import bytereviews3 from "../assets/projects/bytereviews3.webp";
 import stocky1 from "../assets/projects/stocky1.webp";
 import stocky2 from "../assets/projects/stocky2.webp";
 import stocky3 from "../assets/projects/stocky3.webp";
-
-import { Image } from "astro:assets";
-import { getLocale } from "astro-i18n-aut";
 
 const locale = getLocale(Astro.url);
 
@@ -36,27 +37,27 @@ const translation = {
   },
 };
 
-const t = translation[locale] || translation.es;
+const t = translation[locale as keyof typeof translation];
 
 const projects = [
   {
     title: "ByteReviews",
     year: "2023",
-    description: translation[locale].ByteReviews,
+    description: t.ByteReviews,
     technologies: ["React", "Next.js", "Firebase"],
     images: [bytereviews1, bytereviews2, bytereviews3],
   },
   {
     title: "Reactive",
     year: "2023",
-    description: translation[locale].Reactive,
+    description: t.Reactive,
     technologies: ["Javascript", "React", "Python", "Flask"],
     images: [reactive1, reactive2, reactive3],
   },
   {
     title: "Stocky",
     year: "2022",
-    description: translation[locale].Stocky,
+    description: t.Stocky,
     technologies: ["Javascript", "React", "Python", "Flask"],
     images: [stocky1, stocky2, stocky3],
   },
@@ -90,7 +91,6 @@ const projects = [
     });
   });
 </script>
-
 <div class="accordion">
   {
     projects.map((project: any) => (
@@ -101,7 +101,7 @@ const projects = [
             <h3>{project.title}</h3>
           </div>
           <div class="accordion__item__header__right">
-            <span class="accordion__item__header__right__company">↘</span>
+            <span class="accordion__item__header__right-link">↘</span>
           </div>
         </div>
         <div class="accordion__item__content">
@@ -113,7 +113,8 @@ const projects = [
           </ul>
           <div class="accordion__item__content__images">
             {project.images.map((image: string) => (
-              <Image src={image} alt={project.title} />
+              // @ts-ignore
+              <Image src={image} alt={`${project.title}`} class="project-image" />
             ))}
           </div>
         </div>
