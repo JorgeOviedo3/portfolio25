@@ -148,7 +148,7 @@ const translation = {
   },
 };
 
-const t = translation[locale] || translation.es;
+const t = translation[locale as keyof typeof translation];
 
 const technologies = [
   "JavaScript",
@@ -167,7 +167,7 @@ const technologies = [
 ];
 ---
 
-<section class="container" id="about">
+<section id="about" class="container">
   <div class="info">
     <div class="left">
       <h2>{t.title}</h2>
@@ -231,5 +231,4 @@ const technologies = [
       ))
     }
   </div>
-  <div class="border-bottom"></div>
 </section>

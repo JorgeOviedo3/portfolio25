@@ -1,10 +1,9 @@
 #about {
-  padding-top: 200px;
-  .border-bottom {
-    height: 100px;
-    border-radius: 50% 50%;
-    // border-bottom: 2px solid #343434;
-    margin-top: 100px;
+  padding-bottom: 200px;
+  @media screen and (max-width: 1392px) {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .info {
     display: flex;
@@ -26,10 +25,6 @@
           }
         }
       }
-      p {
-        // font-size: 40px;
-        font-family: "NeueMontreal";
-      }
     }
     .right {
       width: 50%;
@@ -45,12 +40,27 @@
         // filter: grayscale(100%);
       }
     }
+    @media screen and (max-width: 702px) {
+      flex-direction: column-reverse;
+      .left {
+        width: 100%;
+      }
+      .right {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+      }
+    }
   }
   .certifications,
   .experiences {
     h3 {
       text-align: center;
       margin-top: 200px;
+      @media screen and (max-width: 702px) {
+        margin-top: 75px;
+      }
     }
     .certification:last-child {
       border-bottom: none;
@@ -78,10 +88,20 @@
           color: var(--secondary-color);
           max-width: 20px;
           text-align: end;
+          @media screen and (max-width: 702px) {
+            margin-top: 0px;
+          }
         }
       }
       &__right {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 702px) {
+          flex-direction: column;
+          margin-left: 50px;
+          gap: 10px;
+        }
         span {
           font-size: 20px;
           color: var(--secondary-color);
@@ -95,16 +115,24 @@
           border-radius: 100%;
           line-height: 0%;
           transition: transform 0.5s, color 0.5s, background-color 0.5s;
+          @media screen and (max-width: 702px) {
+            width: 24px;
+            height: 24px;
+            font-size: 14px;
+          }
         }
         p {
           letter-spacing: 3px;
           margin: 0px;
           margin-right: 10px;
+          margin-top: 10px;
         }
       }
     }
   }
   .certification {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     &:hover {
       cursor: pointer;
@@ -119,16 +147,35 @@
         }
       }
     }
+    @media screen and (max-width: 702px) {
+      flex-direction: column;
+      align-items: start !important;
+      justify-content: start;
+      .certification__right {
+        align-items: start;
+        justify-content: start;
+      }
+    }
   }
   .experience {
+    .experience-header {
+      @media screen and (max-width: 702px) {
+        flex-direction: column;
+        align-items: start !important;
+        justify-content: start;
+      }
+    }
     .experience-content {
       padding: 20px;
       ul {
         font-family: "Mondwest";
-        // list-style-type: "☓ ";
+        list-style-type: "⎷ ";
       }
       ul li {
         font-size: 20px;
+        @media screen and (max-width: 702px) {
+          font-size: 16px;
+        }
       }
     }
   }

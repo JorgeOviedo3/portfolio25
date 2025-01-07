@@ -1,24 +1,33 @@
 #stats {
-  display: flex;
-  justify-content: space-around;
-  padding: 200px 0px;
-  border-radius: 10%;
-  border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
-  .stat-wrapper {
+  padding-bottom: 200px;
+  @media screen and (max-width: 1392px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+  }
+  .stats-wrapper {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    .number {
-      font-size: 78px;
-      margin: 0px;
-      font-family: "NeueMontreal";
-      .icon {
-      }
+    justify-content: space-around;
+    padding: 200px 0px;
+    border-radius: 10%;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    gap: 10px;
+    @media screen and (max-width: 702px) {
+      padding: 50px 0px;
+      max-width: fit-content;
     }
-    .text {
-      font-family: "NeueMontreal";
-      font-size: 16px;
+    .stat-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      @media screen and (max-width: 702px) {
+        text-align: center;
+        .number {
+          margin-bottom: 0px;
+        }
+      }
     }
   }
 }

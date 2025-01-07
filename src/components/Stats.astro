@@ -38,18 +38,22 @@ const translation = {
     ],
   },
 };
+
+const t = translation[locale as keyof typeof translation];
 ---
 
 <section id="stats" class="container">
-  {
-    translation[locale].stats.map((stat: any) => (
-      <div class="stat-wrapper">
-        <p class="number">
-          {stat.number}
-          <span class="icon">+</span>
-        </p>
-        <p class="text">{stat.text}</p>
-      </div>
-    ))
-  }
+  <div class="stats-wrapper">
+    {
+      t.stats.map((stat: any) => (
+        <div class="stat-wrapper">
+          <h3 class="number">
+            {stat.number}
+            <span class="icon">+</span>
+          </h3>
+          <p class="text">{stat.text}</p>
+        </div>
+      ))
+    }
+  </div>
 </section>
