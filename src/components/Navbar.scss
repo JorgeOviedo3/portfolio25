@@ -24,6 +24,7 @@ nav {
       letter-spacing: 3px;
       color: var(--text-color);
       cursor: pointer;
+      transition: color 0.5s;
       &:hover {
         text-decoration-line: underline;
       }

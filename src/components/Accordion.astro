@@ -46,6 +46,10 @@ const projects = [
     description: t.ByteReviews,
     technologies: ["React", "Next.js", "Firebase"],
     images: [bytereviews1, bytereviews2, bytereviews3],
+    links: {
+      github: "https://github.com/JorgeOviedo3/ByteReviews",
+      demo: "https://bytereviews.net",
+    },
   },
   {
     title: "Reactive",
@@ -53,6 +57,10 @@ const projects = [
     description: t.Reactive,
     technologies: ["Javascript", "React", "Python", "Flask"],
     images: [reactive1, reactive2, reactive3],
+    links: {
+      github: "https://github.com/JorgeOviedo3/Reactive",
+      demo: "https://reactivedevs.onrender.com",
+    },
   },
   {
     title: "Stocky",
@@ -60,6 +68,11 @@ const projects = [
     description: t.Stocky,
     technologies: ["Javascript", "React", "Python", "Flask"],
     images: [stocky1, stocky2, stocky3],
+    links: {
+      github: "https://github.com/sabahrahal/stocky-final-project",
+      demo: "https://stocky.onrender.com",
+      video: "https://www.youtube.com/watch?v=St4Okrc6Mqc",
+    },
   },
 ];
 ---
@@ -111,6 +124,23 @@ const projects = [
               <li>{technology}</li>
             ))}
           </ul>
+          <div class="accordion__item__content__links">
+            {project.links.github && (
+              <a href={project.links.github} target="_blank" class="button">
+                GitHub
+              </a>
+            )}
+            {project.links.demo && (
+              <a href={project.links.demo} target="_blank" class="button">
+                Demo
+              </a>
+            )}
+            {project.links.video && (
+              <a href={project.links.video} target="_blank" class="button">
+                Video
+              </a>
+            )}
+          </div>
           <div class="accordion__item__content__images">
             {project.images.map((image: string) => (
               // @ts-ignore

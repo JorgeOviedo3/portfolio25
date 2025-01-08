@@ -8,7 +8,7 @@ const locale = getLocale(Astro.url);
 const translation = {
   es: {
     title: "Trabajemos en algo juntos, ",
-    link: "di hola.",
+    link: "salúdame.",
   },
   en: {
     title: "Let’s work on something together, ",
@@ -24,7 +24,9 @@ const t = translation[locale as keyof typeof translation];
     <!-- <Image class="image" src={gradient} alt="gradient" /> -->
     <div class="wrapper__content">
       <h1>
-        {t.title}<a class="email-footer" target="_blank" href="mailto:hola@joviedo.com">{t.link}</a>
+        {t.title}<br /><a class="email-footer" target="_blank" href="mailto:hola@joviedo.com"
+          >{t.link}</a
+        >
       </h1>
       <Socials />
       <a href="https://github.com/jorgeoviedo3" target="_blank" class="copyright"

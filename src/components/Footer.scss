@@ -16,6 +16,10 @@
       height: 100%;
       .email-footer {
         color: var(--text-color);
+        transition: color 0.5s;
+        &:hover {
+          color: var(--secondary-color);
+        }
       }
       h1 {
         text-align: center;
