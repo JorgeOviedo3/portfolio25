@@ -9,6 +9,26 @@ import Stats from "../components/Stats.astro";
 import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
 import Theme from "../components/Theme.astro";
+import { getLocale } from "astro-i18n-aut";
+
+const locale = getLocale(Astro.url);
+
+const translation = {
+  es: {
+    title: "Jorge Oviedo - Portafolio 25",
+    description:
+      "Soy Jorge, un desarrollador frontend apasionado por crear aplicaciones web rápidas y accesibles. Descubre mi portafolio de proyectos y mi experiencia en tecnologías como React, TypeScript, y más.",
+    link: "https://www.joviedo.com/",
+  },
+  en: {
+    title: "Jorge Oviedo - Portfolio 25",
+    description:
+      "I'm Jorge, a frontend developer passionate about creating fast and accessible web applications. Discover my portfolio of projects and my experience in technologies like React, TypeScript, and more.",
+    link: "https://www.joviedo.com/en/",
+  },
+};
+
+const t = translation[locale as keyof typeof translation];
 ---
 
 <script>
@@ -68,11 +88,20 @@ import Theme from "../components/Theme.astro";
 </script>
 
 <Layout>
-  <Navbar />
-  <Theme />
-  <Hero />
-  <Projects />
-  <Stats />
-  <About />
-  <Footer />
+  <Fragment slot="head">
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:image" content="https://www.joviedo.com/favicon.svg" />
+    <meta property="og:url" content={t.link} />
+  </Fragment>
+
+  <main slot="body">
+    <Navbar />
+    <Theme />
+    <Hero />
+    <Projects />
+    <Stats />
+    <About />
+    <Footer />
+  </main>
 </Layout>
