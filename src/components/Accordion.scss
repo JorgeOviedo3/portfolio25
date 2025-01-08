@@ -69,6 +69,7 @@
       color: var(--text-color);
       max-height: 0;
       display: none;
+      margin-left: 70px;
       background-color: var(--background-color);
       @media screen and (max-width: 702px) {
         margin-top: 20px;
@@ -84,10 +85,8 @@
         font-size: 40px;
         font-family: "NeueMontreal";
         margin-top: 0px;
-        max-width: 50%;
         @media screen and (max-width: 702px) {
           font-size: 24px;
-          max-width: 100%;
         }
       }
       &__links {
