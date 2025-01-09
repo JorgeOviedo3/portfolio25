@@ -13,6 +13,12 @@ const translation = {
     textTitle: `Desarrollador frontend ubicado en Madrid. Apasionado por
     crear sitios y aplicaciones web que sean rápidos y accesibles.`,
     technologies: "Tecnologías",
+    buttonCurriculum: "Revisa mi curriculum",
+    buttonEmail: "Enviame un email",
+    languages: "Idiomas",
+    frameworks: "Frameworks",
+    tools: "Herramientas",
+    design: "Diseño",
     experience: {
       title: "Experiencia",
       items: [
@@ -88,6 +94,12 @@ const translation = {
     textTitle: `A full-stack developer based in Madrid. I have a passion for web development and love to
     create websites and web applications that are fast, responsive, and accessible.`,
     technologies: "Technologies",
+    buttonCurriculum: "Check my curriculum",
+    buttonEmail: "Send me an email",
+    languages: "Languages",
+    frameworks: "Frameworks",
+    tools: "Tools",
+    design: "Design",
     experience: {
       title: "Experience",
       items: [
@@ -162,21 +174,13 @@ const translation = {
 
 const t = translation[locale as keyof typeof translation];
 
-const technologies = [
-  "JavaScript",
-  "Python",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Astro",
-  "Flask",
-  "Tailwind",
-  "Redux",
-  "React Testing Library",
-  "Figma",
-  "Adobe Illustrator/Photoshop",
-  "Git/GitHub",
-];
+const technologies = {
+  languages: ["JavaScript", "TypeScript", "Python"],
+  frameworks: ["React", "Next.js", "Astro", "Flask"],
+  ui: ["Sass", "Less", "Tailwind", "MaterialUI", "Bootstrap"],
+  tools: ["Redux", "Firebase", "React Query", "React Testing Library", "Git/GitHub"],
+  design: ["Figma", "Adobe Illustrator/Photoshop"],
+};
 ---
 
 <section id="about" class="container">
@@ -186,10 +190,47 @@ const technologies = [
       <p>
         {t.textTitle}
       </p>
+      <a
+        href={locale === "es"
+          ? "https://utfs.io/f/fEVrcPOd8IS4hrzbfaIBygX6otkVLQEz597K3UR1cCW4srGa"
+          : "https://utfs.io/f/fEVrcPOd8IS4LNC1Dzjqn73eUTWB5EJSbVgCKGujlwqckOsA"}
+        target="_blank"
+        class="download-cv">{t.buttonCurriculum}</a
+      >
+      <a href="email:hola@joviedo.com" target="_blank" class="download-cv">{t.buttonEmail}</a>
       <div class="technologies">
         <h4>{t.technologies}</h4>
         <div class="technologies-list">
-          {technologies.map((tech) => <p>{tech}</p>)}
+          <div class="item">
+            <p>{t.languages}:</p>
+            <div class="wrapper">
+              {technologies.languages.map((tech) => <p>{tech}</p>)}
+            </div>
+          </div>
+          <div class="item">
+            <p>UI:</p>
+            <div class="wrapper">
+              {technologies.ui.map((tech) => <p>{tech}</p>)}
+            </div>
+          </div>
+          <div class="item">
+            <p>{t.frameworks}:</p>
+            <div class="wrapper">
+              {technologies.frameworks.map((tech) => <p>{tech}</p>)}
+            </div>
+          </div>
+          <div class="item">
+            <p>{t.tools}:</p>
+            <div class="wrapper">
+              {technologies.tools.map((tech) => <p>{tech}</p>)}
+            </div>
+          </div>
+          <div class="item">
+            <p>{t.design}:</p>
+            <div class="wrapper">
+              {technologies.design.map((tech) => <p>{tech}</p>)}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -237,7 +278,7 @@ const technologies = [
           </div>
           <div class="certification__right">
             <p>{item.company}</p>
-            <span>↗</span>
+            <span>↘</span>
           </div>
         </a>
       ))

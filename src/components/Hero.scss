@@ -1,5 +1,5 @@
 #hero {
-  height: 80vh;
+  height: 90vh;
   .hero-wrapper {
     position: relative;
     display: flex;
@@ -7,6 +7,10 @@
     align-items: center;
     height: 100%;
     .image {
+      display: none;
+      .dark & {
+        display: block;
+      }
       position: absolute;
       object-fit: cover;
       z-index: 10;
