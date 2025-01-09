@@ -8,6 +8,11 @@ nav {
     padding-top: 40px;
     z-index: 999999;
     mix-blend-mode: var(--mix-blend);
+    @media screen and (max-width: 1392px) {
+      box-sizing: border-box;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
   #name {
     font-family: "NeueMontreal";
