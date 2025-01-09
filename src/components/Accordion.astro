@@ -16,18 +16,58 @@ import stocky1 from "../assets/projects/stocky1.webp";
 import stocky2 from "../assets/projects/stocky2.webp";
 import stocky3 from "../assets/projects/stocky3.webp";
 
+import arquidomo1 from "../assets/projects/arquidomo1.webp";
+import arquidomo2 from "../assets/projects/arquidomo2.webp";
+import arquidomo3 from "../assets/projects/arquidomo3.webp";
+
+import ap1 from "../assets/projects/ap1.webp";
+import ap2 from "../assets/projects/ap2.webp";
+import ap3 from "../assets/projects/ap3.webp";
+
+import chamos1 from "../assets/projects/chamos1.webp";
+import chamos2 from "../assets/projects/chamos2.webp";
+import chamos3 from "../assets/projects/chamos3.webp";
+
+import urban1 from "../assets/projects/urban1.webp";
+import urban2 from "../assets/projects/urban2.webp";
+import urban3 from "../assets/projects/urban3.webp";
+
+import febasa1 from "../assets/projects/febasa1.webp";
+import febasa2 from "../assets/projects/febasa2.webp";
+import febasa3 from "../assets/projects/febasa3.webp";
+
 const locale = getLocale(Astro.url);
 
 const translation = {
   es: {
+    Febasa:
+      "Diseño y desarrollo de la landing page de Ferretería Batista, una empresa ubicada en Coro y fundada en 1970. Reconocida por su compromiso en ofrecer soluciones integrales para el sector de la construcción.",
+    Arquidomo:
+      "Diseño y desarrollo de la landing page de Arquidomo, una empresa especializada en la automatización de hogares, destacando sus soluciones innovadoras para mejorar la comodidad, seguridad y eficiencia en el hogar.",
+    UrbanProject:
+      "Diseño y desarrollo de la landing page de Urban Project, expertos en reformas y construcción en Barcelona. Donde tus proyectos se convierten en realidades de calidad.",
+    ChamosBarber:
+      "Diseño y desarrollo de la landing page de Chamos Barber, una barbería con tres sedes estratégicamente ubicadas en Florida. Reconocida por su atención al detalle y servicios personalizados.",
+    AmigosPeludos:
+      "Diseño y desarrollo de Amigos Peludos, una aplicación web de reseñas, blog y tienda dedicada a productos para mascotas.",
     ByteReviews:
-      "Desarrollo y diseño de una plataforma de reseñas, ByteReviews, una comunidad que se dedica a valorar productos de tecnología.",
+      "Diseño y desarrollo de ByteReviews, una aplicación web que sirve como plataforma para una comunidad dedicada a valorar y reseñar productos tecnológicos.",
     Reactive:
-      "Desarrollo y diseño de una red social llamada Reactive, una comunidad destinada a ayudar a los desarrolladores de React mediante el uso de snippets.",
+      "Diseño y desarrollo de Reactive, una aplicación web que funciona como red social para desarrolladores de React, facilitando el intercambio y uso de snippets de código.",
     Stocky:
-      "Desarrollo y diseño de un sistema de gestión de inventario, Stocky, enfocado en ayudar a las empresas a gestionar inventario y ventas.",
+      "Diseño y desarrollo de Stocky, una aplicación web de gestión integral de inventarios, creada para ayudar a las empresas a administrar eficientemente sus inventarios y ventas.",
   },
   en: {
+    Febasa:
+      "Development and design of the landing page of Ferretería Batista, a company based in Coro and founded in 1970. Known for its commitment to offer integrated solutions for the construction sector.",
+    Arquidomo:
+      "Development and design of the landing page of Arquidomo, a company specializing in home automation, emphasizing its innovative solutions to improve comfort, security, and efficiency in the home.",
+    UrbanProject:
+      "Development and design of the landing page of Urban Project, experts in renovations and construction in Barcelona. Where your projects turn into quality realities.",
+    ChamosBarber:
+      "Development and design of the landing page of Chamos Barber, a barber shop with three strategically located branches in Florida. Known for their attention to detail and personalized services.",
+    AmigosPeludos:
+      "Development and design of Amigos Peludos, a review platform, blog, and store dedicated to products for pets.",
     ByteReviews:
       "Development and design of a review platform, ByteReviews, a community that is dedicated to rate technology products.",
     Reactive:
@@ -41,13 +81,61 @@ const t = translation[locale as keyof typeof translation];
 
 const projects = [
   {
-    title: "ByteReviews",
+    title: "Ferretería Batista",
+    year: "2024",
+    description: t.Febasa,
+    technologies: ["Typescript", "Astro", "Sass", "GSAP"],
+    images: [febasa1, febasa2, febasa3],
+    links: {},
+  },
+  {
+    title: "Arquidomo",
+    year: "2024",
+    description: t.Arquidomo,
+    technologies: ["Typescript", "Astro", "Tailwind"],
+    images: [arquidomo1, arquidomo2, arquidomo3],
+    links: {
+      demo: "https://www.arquidomord.com/",
+    },
+  },
+  {
+    title: "Urban Project",
+    year: "2024",
+    description: t.UrbanProject,
+    technologies: ["Typescript", "Astro", "Tailwind"],
+    images: [urban1, urban2, urban3],
+    links: {
+      demo: "https://www.urbanprojectbcn.com/",
+    },
+  },
+  {
+    title: "Chamos Barber",
+    year: "2023",
+    description: t.ChamosBarber,
+    technologies: ["React", , "Next.js", "Tailwind"],
+    images: [chamos1, chamos2, chamos3],
+    links: {
+      github: "https://github.com/JorgeOviedo3/chamosbarber",
+      demo: "https://www.chamosbarbershop.com/",
+    },
+  },
+  {
+    title: "Amigos Peludos",
+    year: "2023",
+    description: t.Stocky,
+    technologies: ["React", , "Next.js", "Tailwind", "Firebase"],
+    images: [ap1, ap2, ap3],
+    links: {
+      demo: "https://amigospeludos-tau.vercel.app/",
+    },
+  },
+  {
+    title: "Byte Reviews",
     year: "2023",
     description: t.ByteReviews,
-    technologies: ["React", "Next.js", "Firebase"],
+    technologies: ["Tailwind", "React", "Next.js", "Tailwind", "Firebase"],
     images: [bytereviews1, bytereviews2, bytereviews3],
     links: {
-      github: "https://github.com/JorgeOviedo3/ByteReviews",
       demo: "https://bytereviews.net",
     },
   },
@@ -55,7 +143,7 @@ const projects = [
     title: "Reactive",
     year: "2023",
     description: t.Reactive,
-    technologies: ["Javascript", "React", "Python", "Flask"],
+    technologies: ["React", "Python", "Flask", "Tailwind"],
     images: [reactive1, reactive2, reactive3],
     links: {
       github: "https://github.com/JorgeOviedo3/Reactive",
@@ -66,7 +154,7 @@ const projects = [
     title: "Stocky",
     year: "2022",
     description: t.Stocky,
-    technologies: ["Javascript", "React", "Python", "Flask"],
+    technologies: ["React", "Bootstrap", "Python", "Flask"],
     images: [stocky1, stocky2, stocky3],
     links: {
       github: "https://github.com/sabahrahal/stocky-final-project",
@@ -127,12 +215,12 @@ const projects = [
           <div class="accordion__item__content__links">
             {project.links.github && (
               <a href={project.links.github} target="_blank" class="button">
-                GitHub
+                Github
               </a>
             )}
             {project.links.demo && (
               <a href={project.links.demo} target="_blank" class="button">
-                Demo
+                {locale === "es" ? "Visitar" : "Visit"}
               </a>
             )}
             {project.links.video && (
