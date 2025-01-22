@@ -24,14 +24,12 @@ const t = translation[locale as keyof typeof translation];
     <!-- <Image class="image" src={gradient} alt="gradient" /> -->
     <div class="wrapper__content">
       <h1>
-        {t.title}<br /><a class="email-footer" target="_blank" href="mailto:hola@joviedo.com"
-          >{t.link}</a
-        >
+        {t.title}<br /><a class="email-footer" href="mailto:hola@joviedo.com">{t.link}</a>
       </h1>
       <Socials />
-      <a href="https://github.com/jorgeoviedo3" target="_blank" class="copyright"
-        >Jorge Oviedo©{new Date().getFullYear()}</a
-      >
+      <a href="mailto:hola@joviedo.com" class="copyright"
+        >hola@joviedo.com ©{new Date().getFullYear()}
+      </a>
     </div>
   </div>
 </footer>

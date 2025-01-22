@@ -1,0 +1,47 @@
+.name-container {
+  position: relative;
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.5;
+  padding: 2rem 0;
+
+  .text-line {
+    display: inline-block;
+    margin: 0 auto;
+    white-space: nowrap;
+
+    .letter {
+      display: inline-block;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .text-muted {
+      color: #888;
+    }
+  }
+
+  .jumping-cat {
+    position: absolute;
+    top: 4rem; // Adjusted for alignment
+    left: 50%;
+    transform: translateX(-50%);
+    height: 64px;
+
+    @media (min-width: 640px) {
+      top: 5rem;
+      height: 80px; // Adjust for larger screens
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

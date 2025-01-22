@@ -10,6 +10,7 @@ import Footer from "../components/Footer.astro";
 import About from "../components/About.astro";
 import Theme from "../components/Theme.astro";
 import { getLocale } from "astro-i18n-aut";
+import Name from "../components/Name.astro";
 
 const locale = getLocale(Astro.url);
 
@@ -31,62 +32,6 @@ const translation = {
 const t = translation[locale as keyof typeof translation];
 ---
 
-<script>
-  import { PowerGlitch } from "powerglitch";
-
-  PowerGlitch.glitch(".glitch-hover", {
-    playMode: "hover",
-    hideOverflow: false,
-    timing: {
-      duration: 1000,
-      iterations: 1,
-      easing: "ease-in-out",
-    },
-    glitchTimeSpan: {
-      start: 0,
-      end: 0.3,
-    },
-    shake: {
-      velocity: 10,
-      amplitudeX: 0.4,
-      amplitudeY: 0.4,
-    },
-    slice: {
-      count: 10,
-      velocity: 10,
-      minHeight: 0.02,
-      maxHeight: 0.4,
-      hueRotate: true,
-    },
-  });
-
-  PowerGlitch.glitch(".glitch-always", {
-    playMode: "always",
-    hideOverflow: false,
-    timing: {
-      duration: 1000,
-      iterations: 15,
-      easing: "ease-in-out",
-    },
-    glitchTimeSpan: {
-      start: 0.4,
-      end: 0.7,
-    },
-    shake: {
-      velocity: 10,
-      amplitudeX: 0.4,
-      amplitudeY: 0.4,
-    },
-    slice: {
-      count: 4,
-      velocity: 10,
-      minHeight: 0.02,
-      maxHeight: 0.4,
-      hueRotate: true,
-    },
-  });
-</script>
-
 <Layout>
   <Fragment slot="head">
     <meta property="og:title" content={t.title} />
@@ -97,6 +42,7 @@ const t = translation[locale as keyof typeof translation];
 
   <main slot="body">
     <Navbar />
+    <!-- <Name /> -->
     <Theme />
     <Hero />
     <Stats />

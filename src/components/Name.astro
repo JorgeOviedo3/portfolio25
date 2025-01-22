@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import jumpingCat from "../assets/pixel-cat-unscreen.gif";
+
+import "./Name.scss";
+---
+
+<div class="name-container">
+  <!-- Animated Text -->
+  <h1 class="text-line">
+    Jorge Ovie
+    <span class="letter animate-a">d</span>
+    <span class="letter animate-r">o</span>
+    <span class="text-muted">!</span>
+  </h1>
+
+  <!-- Jumping Cat GIF -->
+  <Image src={jumpingCat} alt="Jumping Cat" class="jumping-cat" width="180" height="64" />
+</div>
+
+<script>
+  import gsap from "gsap";
+
+  // Wait for DOMContentLoaded
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded");
+
+    // Ensure elements are loaded
+    const lettersA = document.querySelectorAll(".animate-a");
+    const lettersR = document.querySelectorAll(".animate-r");
+
+    // Log to verify targeting
+    console.log("Letters A:", lettersA);
+    console.log("Letters R:", lettersR);
+
+    if (lettersA.length > 0 && lettersR.length > 0) {
+      // Initialize GSAP animations for letters
+      const animateLetters = () => {
+        gsap
+          .timeline({ repeat: -1, repeatDelay: 0.5 })
+          .to(".animate-a", { y: -10, duration: 0.5, ease: "ease-in-out" })
+          .to(".animate-a", { y: 0, duration: 0.5, ease: "ease-in-out" })
+          .to(".animate-r", { y: -10, duration: 0.5, ease: "ease-in-out" }, "-=0.4")
+          .to(".animate-r", { y: 0, duration: 0.5, ease: "ease-in-out" });
+      };
+
+      animateLetters();
+    } else {
+      console.error("Target elements not found.");
+    }
+  });
+</script>

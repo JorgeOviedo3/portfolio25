@@ -11,8 +11,8 @@
   "dependencies": {
     "astro": "^5.1.1",
     "astro-i18n-aut": "^0.7.0",
+    "gsap": "^3.12.5",
     "i18next": "^23.16.8",
-    "powerglitch": "^2.3.4",
     "sass": "^1.83.0",
     "sharp": "^0.33.5"
   }

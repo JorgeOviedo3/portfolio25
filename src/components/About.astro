@@ -17,6 +17,7 @@ const translation = {
     buttonEmail: "Enviame un email",
     languages: "Lenguajes",
     frameworks: "Frameworks",
+    databases: "Bases de datos",
     tools: "Herramientas",
     design: "Diseño",
     experience: {
@@ -98,6 +99,7 @@ const translation = {
     buttonEmail: "Send me an email",
     languages: "Languages",
     frameworks: "Frameworks",
+    databases: "Databases",
     tools: "Tools",
     design: "Design",
     experience: {
@@ -175,11 +177,12 @@ const translation = {
 const t = translation[locale as keyof typeof translation];
 
 const technologies = {
-  languages: ["JavaScript", "TypeScript", "Python"],
+  languages: ["JavaScript", "Python", "TypeScript"],
   frameworks: ["React", "Next.js", "Astro", "Flask"],
   ui: ["Sass", "Less", "Tailwind", "MaterialUI", "Bootstrap"],
-  tools: ["Redux", "Firebase", "React Query", "React Testing Library", "Git/GitHub"],
-  design: ["Figma", "Adobe Illustrator/Photoshop"],
+  tools: ["React Testing Library", "Redux", , "Git/GitHub", "React Query"],
+  design: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+  databases: ["MySQL", "PostgreSQL", "Firebase"],
 };
 ---
 
@@ -190,13 +193,13 @@ const technologies = {
       <p>
         {t.textTitle}
       </p>
-      <a
+      <!-- <a
         href={locale === "es"
           ? "https://utfs.io/f/fEVrcPOd8IS4hrzbfaIBygX6otkVLQEz597K3UR1cCW4srGa"
           : "https://utfs.io/f/fEVrcPOd8IS4LNC1Dzjqn73eUTWB5EJSbVgCKGujlwqckOsA"}
         target="_blank"
         class="download-cv">{t.buttonCurriculum}</a
-      >
+      > -->
       <a href="email:hola@joviedo.com" target="_blank" class="download-cv">{t.buttonEmail}</a>
       <div class="technologies">
         <h4>{t.technologies}</h4>
@@ -217,6 +220,12 @@ const technologies = {
             <p>{t.frameworks}:</p>
             <div class="wrapper">
               {technologies.frameworks.map((tech) => <p>{tech}</p>)}
+            </div>
+          </div>
+          <div class="item">
+            <p>{t.databases}:</p>
+            <div class="wrapper">
+              {technologies.databases.map((tech) => <p>{tech}</p>)}
             </div>
           </div>
           <div class="item">

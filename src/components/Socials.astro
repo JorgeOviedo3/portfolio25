@@ -5,9 +5,9 @@ import { Image } from "astro:assets";
 import github from "../assets/socials/github.svg";
 import githubDark from "../assets/socials/githubDark.svg";
 import linkedin from "../assets/socials/linkedin.svg";
-import { getLocale } from "astro-i18n-aut";
 
-const locale = getLocale(Astro.url);
+// import { getLocale } from "astro-i18n-aut";
+// const locale = getLocale(Astro.url);
 ---
 
 <div class="socials">
@@ -20,12 +20,12 @@ const locale = getLocale(Astro.url);
   <a href="https://www.linkedin.com/in/jorgeoviedo3/" target="_blank">
     <Image src={linkedin} alt="Linkedin" />
   </a>
-  <a class="link" href="mailto:hola@joviedo.com" target="_blank">MAIL</a>
-  <a
+  <a class="link" href="mailto:hola@joviedo.com">MAIL</a>
+  <!-- <a
     class="link"
     href={locale === "es"
-      ? "https://utfs.io/f/fEVrcPOd8IS4hrzbfaIBygX6otkVLQEz597K3UR1cCW4srGa"
-      : "https://utfs.io/f/fEVrcPOd8IS4LNC1Dzjqn73eUTWB5EJSbVgCKGujlwqckOsA"}
+      ? "#cv-es"
+      : "#cv-en"}
     target="_blank">CURRICULUM</a
-  >
+  > -->
 </div>
